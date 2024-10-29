@@ -56,7 +56,7 @@ const AddMovie = () => {
         setIsLoading(true);
 
         try {
-            const res = await fetch("http://localhost:3000/api/movies", {
+            const res = await fetch(`${import.meta.env.VITE_SERVER_URL}/api/movies`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

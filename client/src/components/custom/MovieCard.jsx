@@ -1,12 +1,12 @@
 import React from 'react'
 
-const MovieCard = () => {
+const MovieCard = ({ movie }) => {
   return (
-    <div className='movie-card'>
-        <img src="https://bollyflix-cdn.store/wp-content/uploads/2024/10/Venom-The-Last-Dance-2024-Hindi-Movie.jpg" alt="thumbnail" />
-       <div className='bg-[#27272A] p-3  pb-10'>
-       <p className='text-sm text-white text-center'>Download Venom: The Last Dance (2024) Hindi Movie 480p | 720p | 1080p CAMRip V3</p>
-       </div>
+    <div className='movie-card overflow-hidden cursor-pointer'>
+      <img src={movie.screenshots[1]} alt="thumbnail" className='h-64 object-cover' />
+      <div className='bg-[#27272A] p-3  pb-10'>
+        <p className='text-sm text-white text-center'>Download {movie.fullName} {movie.year} {movie.language} Movie {movie.quality} </p>
+      </div>
     </div>
   )
 }
