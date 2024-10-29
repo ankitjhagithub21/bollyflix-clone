@@ -2,11 +2,17 @@ import Footer from '@/components/custom/Footer'
 import Navbar from '@/components/custom/Navbar'
 import { Button } from '@/components/ui/button'
 import React, { useState } from 'react'
-import { useLocation } from 'react-router-dom'
+import { Navigate, useLocation } from 'react-router-dom'
 
 const MovieDetails = () => {
     const location = useLocation()
-    const movie = location.state
+    
+    const movie = location?.state
+
+    if(!movie){
+      return <Navigate to={"/"}/>
+    }
+   
   return (
     <>
       <Navbar/>
