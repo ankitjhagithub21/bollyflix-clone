@@ -39,15 +39,21 @@ const getAllMovies = async (req, res) => {
 const getMovieByTitle = async (req, res) => {
   const { title } = req.params;
   try {
-    const movie = await Movie.findOne({ fullName: title });
-    if (!movie) {
-      return res.status(404).json({success:false, message: 'Movie not found' });
+    // Use regex to find movies that include the given title (case-insensitive)
+    const movies = await Movie.find({ 
+      fullName: { $regex: title, $options: 'i' } 
+    });
+
+    if (movies.length === 0) {
+      return res.status(404).json({ success: false, message: 'No movies found' });
     }
-    res.status(200).json({success:true,message:"Server error."});
+
+    res.status(200).json({ success: true, movies });
   } catch (error) {
-    res.status(500).json({success:false,  message: "Server error." });
+    res.status(500).json({ success: false, message: 'Server error' });
   }
 };
+
 
 module.exports = {
   createMovie,

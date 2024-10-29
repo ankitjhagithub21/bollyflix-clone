@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Search } from 'lucide-react'
 import {
   DropdownMenu,
@@ -207,6 +207,12 @@ const qualityData = [
 
 const Navbar = () => {
   const navigate = useNavigate()
+  const [searchTerm,setSearchTerm] = useState('')
+  const searchMovieByTitle = (e) =>{
+    e.preventDefault()
+     navigate(`/movie/${searchTerm}`)
+  }
+
   return (
     <>
       <div className='max-w-6xl mx-auto'>
@@ -214,13 +220,13 @@ const Navbar = () => {
           <div>
             <img src="/navlogo.png" alt="logo" />
           </div>
-          <div className='flex items-center rounded-lg max-w-sm w-full overflow-hidden md:mt-2 mt-0 border border-gray-600'>
-            <input type="text" placeholder='What are you looking for?' className='bg-[#18181B] outline-none p-2 w-full text-sm text-white' />
-            <div className='bg-[#3F3F46] text-white p-2 rounded-l-lg'>
+          <form className='flex items-center rounded-lg max-w-sm w-full overflow-hidden md:mt-2 mt-0 border border-gray-600' onSubmit={searchMovieByTitle}>
+            <input type="text" value={searchTerm} onChange={(e)=>setSearchTerm(e.target.value)} placeholder='What are you looking for?' className='bg-[#18181B] outline-none p-2 w-full text-sm text-white'  required/>
+            <button type='submit' className='bg-[#3F3F46] text-white p-2 rounded-l-lg'>
               <Search />
-            </div>
+            </button>
 
-          </div>
+          </form>
         </div>
         <div className='flex items-center gap-3 px-5 md:px-10 justify-between bg-[#494949] overflow-x-scroll text-white'>
 

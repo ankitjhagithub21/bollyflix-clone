@@ -6,6 +6,7 @@ import Login from './pages/Login'
 import AdminDashboard from './pages/AdminDashboard'
 import MovieDetails from './pages/MovieDetails'
 import AdminMovies from './pages/AdminMovies'
+import MovieResults from './pages/MovieResults'
 
 const App = () => {
   const router = createBrowserRouter([
@@ -28,6 +29,10 @@ const App = () => {
     {
       path:"/admin/movies",
       element:<AdminMovies/>
+    },
+    {
+      path:"/movie/:title",
+      element:<MovieResults/>
     }
   ])
   return <RouterProvider router={router}/>
