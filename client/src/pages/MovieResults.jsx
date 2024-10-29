@@ -28,7 +28,7 @@ const MovieResults = () => {
     return (
         <>
             <Navbar />
-            <div className='min-h-screen max-w-6xl p-5'>
+            <div className='min-h-screen max-w-6xl mx-auto'>
                 {
                     movies.length === 0 ? <h2 className='text-center text-white my-10 text-3xl font-semibold'>No Movie Found</h2> : <Movies movies={movies} />
 
