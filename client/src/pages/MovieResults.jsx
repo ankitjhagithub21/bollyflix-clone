@@ -26,16 +26,16 @@ const MovieResults = () => {
     }, [title])
 
     return (
-        <div className='max-w-6xl mx-auto'>
+        <>
             <Navbar />
-            <div className='min-h-screen'>
+            <div className='min-h-screen max-w-6xl p-5'>
                 {
                     movies.length === 0 ? <h2 className='text-center text-white my-10 text-3xl font-semibold'>No Movie Found</h2> : <Movies movies={movies} />
 
                 }
             </div>
             <Footer />
-        </div>
+        </>
     )
 }
 
