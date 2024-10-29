@@ -4,7 +4,7 @@ const createMovie = async (req, res) => {
   try {
     const newMovie = new Movie(req.body);
     const savedMovie = await newMovie.save();
-    res.status(201).json({success:true,message:"Movie created.",data:savedMovie});
+    res.status(201).json({success:true,message:"Movie added successfully.",data:savedMovie});
   } catch (error) {
     res.status(400).json({success:false, message: "Server error." });
   }

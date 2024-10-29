@@ -32,7 +32,8 @@ const Login = () => {
             const data = await res.json()
 
             if(data.success){
-                console.log(data)
+                localStorage.setItem('token',data.token)
+                toast.success(data.message)
                 navigate("/admin/dashboard")
             }else{
                 toast.error(data.message)
