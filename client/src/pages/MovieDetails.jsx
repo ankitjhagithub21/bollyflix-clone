@@ -27,6 +27,9 @@ const MovieDetails = () => {
             <li className='border-b p-2 grid grid-cols-2'><span>Release Year </span> {movie.releasedYear}</li>
             <li className='border-b p-2 grid grid-cols-2'><span>Genre </span> {movie.genre.join(',')}</li>
             <li className='border-b p-2 grid grid-cols-2'><span>Language </span> {movie.language}</li>
+            <li className='border-b p-2 grid grid-cols-2'><span>Size </span> {movie.size}</li>
+            <li className='border-b p-2 grid grid-cols-2'><span>Quality </span> {movie.quality}</li>
+            <li className='border-b p-2 grid grid-cols-2'><span>Movie Type </span> {movie.movieType}</li>
         </ul>
         <Button className="bg-cyan-500 hover:bg-cyan-700">
             <a href={movie.downloadLinks[0]} target='_blank'>Download Now</a>

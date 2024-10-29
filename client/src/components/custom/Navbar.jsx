@@ -168,6 +168,40 @@ const yearData = [
   }
 ];
 
+const qualityData = [
+  {
+    id: 1,
+    name: "1080p",
+    path: "N/A" // Assuming a placeholder for missing paths
+  },
+  {
+    id: 2,
+    name: "720p",
+    path: "2023"
+  },
+  {
+    id: 3,
+    name: "360p",
+    path: "2022"
+  },
+  {
+    id: 4,
+    name: "4k",
+    path: "2021"
+  },
+  {
+    id: 5,
+    name: "8k",
+    path: "2020"
+  },
+  {
+    id: 7,
+    name: "2k",
+    path: "2020"
+  }
+];
+
+
 
 
 
@@ -204,8 +238,8 @@ const Navbar = () => {
             <DropdownMenuContent className="bg-[#494949] border-none p-3">
 
               {
-                movieData.map(({ id, name, path }) => {
-                  return <DropdownMenuItem className="cursor-pointer text-white p-3" key={id}>{name}</DropdownMenuItem>
+                movieData.map(({ id, name}) => {
+                  return <DropdownMenuItem  className="cursor-pointer text-white p-3" key={id}>{name}</DropdownMenuItem>
                 })
               }
             </DropdownMenuContent>
@@ -249,7 +283,7 @@ const Navbar = () => {
             <DropdownMenuContent className="bg-[#494949] border-none p-3">
 
               {
-                yearData.map(({ id, name, path }) => {
+                qualityData.map(({ id, name}) => {
                   return <DropdownMenuItem className="cursor-pointer uppercase text-white p-3" key={id}>{name}</DropdownMenuItem>
                 })
               }

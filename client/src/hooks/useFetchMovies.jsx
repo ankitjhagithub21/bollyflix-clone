@@ -18,7 +18,7 @@ const useFetchMovies = () => {
         }
         fetchMovies()
     },[])
-    return {movies}
+    return {movies,setMovies}
 }
 
 export default useFetchMovies
