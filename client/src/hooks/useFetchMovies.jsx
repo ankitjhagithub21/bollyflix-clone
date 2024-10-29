@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 
 const useFetchMovies = () => {
     const [movies,setMovies] = useState([])
+    const [loading,setLoading] = useState(true)
     useEffect(()=>{
         const fetchMovies = async() =>{
             try{
@@ -14,11 +15,13 @@ const useFetchMovies = () => {
                 }
             }catch(error){
                 console.log(error)
+            }finally{
+                setLoading(false)
             }
         }
         fetchMovies()
     },[])
-    return {movies,setMovies}
+    return {movies,setMovies,loading}
 }
 
 export default useFetchMovies
