@@ -4,7 +4,8 @@ const MovieSchema = new mongoose.Schema({
   fullName: {
     type: String,
     required: true,
-    trim: true
+    trim: true,
+    unique:true
   },
   language: {
     type: String,
@@ -25,6 +26,10 @@ const MovieSchema = new mongoose.Schema({
   },
   genre: {
     type: [String], // Array to store multiple genres, e.g., ['Action', 'Drama']
+    required: true
+  },
+  movieType: {
+    type: String, // e.g. hollywood
     required: true
   },
   format: {
