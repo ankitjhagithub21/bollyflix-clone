@@ -6,6 +6,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "../ui/dropdown-menu"
+import { useNavigate } from 'react-router-dom';
 
 
 const movieData = [
@@ -171,6 +172,7 @@ const yearData = [
 
 
 const Navbar = () => {
+  const navigate = useNavigate()
   return (
     <>
       <div className='max-w-6xl mx-auto'>
@@ -188,7 +190,7 @@ const Navbar = () => {
         </div>
         <div className='flex items-center gap-3 px-5 md:px-10 justify-between bg-[#494949] overflow-x-scroll text-white'>
 
-          <div className='flex items-center gap-1 px-6 py-4 border-gray-400 border-r rounded-lg'>
+          <div className='flex items-center cursor-pointer gap-1 px-6 py-4 border-gray-400 border-r rounded-lg' onClick={()=>navigate("/")}>
             <img src="https://s.w.org/images/core/emoji/15.0.3/svg/1f3e0.svg" alt="home" width={16} />
             <span className='uppercase tracking-wide font-light mt-1'>home</span>
           </div>

@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Login from './pages/Login'
 import AdminDashboard from './pages/AdminDashboard'
+import MovieDetails from './pages/MovieDetails'
 
 const App = () => {
   const router = createBrowserRouter([
@@ -14,6 +15,10 @@ const App = () => {
     {
       path:"/login",
       element:<Login/>
+    },
+    {
+      path:"/movies/:id",
+      element:<MovieDetails/>
     },
     {
       path:"/admin/dashboard",
