@@ -7,7 +7,7 @@ import { useState } from "react"
 import toast from "react-hot-toast"
 import { useNavigate } from "react-router-dom"
 
-const Login = () => {
+const AddMovie = () => {
     const [username,setUsername] = useState('')
     const [password,setPassword] = useState('')
     const [isLoading,setIsLoading] = useState(false)
@@ -49,16 +49,15 @@ const Login = () => {
     
 
     return (
-        <section className="w-screen h-screen p-5 flex items-center justify-center">
-            <Card className="mx-auto max-w-sm">
+        <section className="p-5 flex items-center my-12 justify-center">
+            <Card className="md:w-1/2 w-full">
             <CardHeader className="space-y-1">
-                <CardTitle className="text-2xl font-bold">Login</CardTitle>
-                <CardDescription>Enter your username and password to login to your account</CardDescription>
+                <CardTitle className="text-2xl font-bold">Add a movie</CardTitle>
             </CardHeader>
             <CardContent>
                 <div className="space-y-4">
                     <div className="space-y-2">
-                        <Label htmlFor="username">Username</Label>
+                        <Label htmlFor="username">Name</Label>
                         <Input id="username" type="text" value={username} onChange={(e)=>setUsername(e.target.value)} placeholder="Your username" required />
                     </div>
                     <div className="space-y-2">
@@ -66,7 +65,7 @@ const Login = () => {
                         <Input id="password" type="password" value={password} onChange={(e)=>setPassword(e.target.value)} placeholder="******" required />
                     </div>
                     <Button type="submit"  className="w-full" onClick={handleLogin}>
-                        Login
+                        Add
                     </Button>
                 </div>
             </CardContent>
@@ -75,4 +74,4 @@ const Login = () => {
     )
 }
 
-export default Login
+export default AddMovie

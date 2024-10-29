@@ -7,6 +7,7 @@ import {
   DropdownMenuTrigger,
 } from "../ui/dropdown-menu"
 
+
 const movieData = [
   {
     id: 1,
@@ -175,7 +176,7 @@ const Navbar = () => {
       <div className='max-w-6xl mx-auto'>
         <div className=' bg-[#27272A] p-5 grid items-start md:grid-cols-2 grid-cols-1 gap-5'>
           <div>
-            <img src="./navlogo.png" alt="logo" />
+            <img src="/navlogo.png" alt="logo" />
           </div>
           <div className='flex items-center rounded-lg max-w-sm w-full overflow-hidden md:mt-2 mt-0 border border-gray-600'>
             <input type="text" placeholder='What are you looking for?' className='bg-[#18181B] outline-none p-2 w-full text-sm text-white' />
