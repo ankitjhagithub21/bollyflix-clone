@@ -1,17 +1,26 @@
 import React from 'react'
 import "./App.css"
-import Navbar from './components/custom/Navbar'
-import Footer from './components/custom/Footer'
 import Home from './pages/Home'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import Login from './pages/Login'
+import AdminDashboard from './pages/AdminDashboard'
 
 const App = () => {
-  return (
-    <>
-   <Navbar/>
-   <Home/>
-   <Footer/>
-    </>
-  )
+  const router = createBrowserRouter([
+    {
+      path:"/",
+      element:<Home/>
+    },
+    {
+      path:"/login",
+      element:<Login/>
+    },
+    {
+      path:"/admin/dashboard",
+      element:<AdminDashboard/>
+    }
+  ])
+  return <RouterProvider router={router}/>
 }
 
 export default App
